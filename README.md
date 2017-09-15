@@ -1,17 +1,11 @@
 # cards.sh
-WIP: Terminal based flashcard application
+A bashscript based flashcard application
 
-I am sure it already exists, but I need a flashcard study application. In order to get some scripting practice, I have decided to write my own in bashscript. As of this point, the program can play back flashcard sets in two modes. Unlearned cards only, and review all mode. Sets must be created manually at this point
+I am sure it already exists, but I need a flashcard study application. In order to get some scripting practice, I have decided to write my own in bashscript. 
 
-Flashcard files must be saved in a "sets" folder within the directory housing the script
+The script should be saved in a folder such as ~/ or ~/flashcards. It will create a sets folder in whatever directory it is ran from, where all flashcard sets are saved
 
-Flashcard files are text files, named <setname>.cards
+Flashcard files are text files, named <setname>.cards - Learned cards are saved in a seperate text file,  named <setname>.cards.learned
 
-Each line within the file is the format `<question>======2======<answer>======2======<hint>`
+Each line within each flashcard file is an entire flashcard in the format `<question>======2======<answer>======2======<hint>`
 
-Todo:
-1. flashcard set creation
-2. flashcard writing to existing set
-3. reset learned cards for a set function
-4. flashcard set deletion
-5. flashcard set listing function
