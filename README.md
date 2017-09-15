@@ -1,13 +1,15 @@
 # cards.sh
-A bashscript based flashcard application
+A bashscript based flashcard application inspired by [Joliv: fla.sh](https://github.com/joliv/fla.sh), but independently written and designed differently
 
+[![cardssh.gif](https://s26.postimg.org/3yd7sczfd/cardssh.gif)](https://postimg.org/image/km4puuu6t/)
+
+## Installation
 The script should be saved in a folder such as ~/ or ~/flashcards. It will create a sets folder in whatever directory it is ran from, where all flashcard sets are saved
 
-Flashcard files are text files, named <setname>.cards - Learned cards are saved in a seperate text file,  named <setname>.cards.learned
-
-Each line within each flashcard file is an entire flashcard in the format:
-
-`<question>======2======<answer>======2======<hint>`
+"This script depends on GNU `shuf`, which comes bundled on most Linux distros, but not on OSX. 
+For OSX install shuf using [Homebrew](http://brew.sh) with `brew install coreutils`
+Then `shuf` is installed as `gshuf`, so alias it with (`alias shuf='gshuf'`) 
+(Thanks [Joliv: fla.sh](https://github.com/joliv/fla.sh) for OSX info on shuf)
 
 ### Usage:
 ```
@@ -21,3 +23,10 @@ cards.sh <options> <flashcard set>
 -d: delete a flashcard set: cards.sh -d exampleset
 -s: List all available flashcard sets: cards.sh -s
 ```
+
+Flashcard files are text files, named <setname>.cards - Learned cards are saved in a seperate text file,  named <setname>.cards.learned
+
+Each line within each flashcard file is an entire flashcard in the format:
+
+`<question>======2======<answer>======2======<hint>`
+
