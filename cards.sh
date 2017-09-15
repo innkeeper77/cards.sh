@@ -53,7 +53,7 @@ HELP () {
 	printf -- "-w: write new flashcards in a set: cards.sh -w exampleset\n"
 	printf -- "-r: reset all learned cards for a set: cards.sh -r exampleset\n"
 	printf -- "-d: delete a flashcard set: cards.sh -d exampleset\n"
-	printf -- "-s: List all available flashcard sets: cards.sh s\n"
+	printf -- "-s: List all available flashcard sets: cards.sh -s\n"
 	exit 0
 }
 
@@ -279,7 +279,7 @@ NEWSET () {
 WRITETO () {	
 	
 	while true; do
-	printf "Write a new flashcard to %s?" selectedset
+	printf "Write a new flashcard to %s?" ${selectedset}
 	read -p " [Y|n] " choice
 				case "$choice" in
 					y|Y )
@@ -326,7 +326,7 @@ DELETESET () {
 		printf "Flashcard set does not exist\n"
 		exit 2
 	fi
-	printf "Delete flashcard set %s? [Y|n]"
+	printf "Delete flashcard set %s? "
 	while true; do
 				read -p "[Y|n] " choice
 				case "$choice" in
@@ -334,6 +334,7 @@ DELETESET () {
 						rm -f sets/${selectedset}.cards.learned
 						rm -f sets/${selectedset}.cards
 						printf "Flashcard set deleted\nexit\n"
+						exit 0
 						;;
 					n|N  )
 						printf "User cancelled\n"

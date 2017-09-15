@@ -26,6 +26,8 @@ cards.sh <options> <flashcard set>
 
 Flashcard files are text files, named <setname>.cards - Learned cards are saved in a seperate text file,  named <setname>.cards.learned
 
+These set files are savid within a subdirectory, sets/
+
 Each line within each flashcard file is an entire flashcard in the format:
 
 `<question>======2======<answer>======2======<hint>`
