@@ -10,20 +10,14 @@ Each line within each flashcard file is an entire flashcard in the format:
 `<question>======2======<answer>======2======<hint>`
 
 ### Usage:
-
+```
 cards.sh <options> <flashcard set>
 
-
 -l: learned mode, play unlearned flashcards from a set: cards.sh -l exampleset
-
 -a: all mode: play both learned and unlearned from a set: cards.sh -a exampleset
-
 -n: create a new flashcard set: cards.sh -n setnamehere
-
 -w: write new flashcards in a set: cards.sh -w exampleset
-
 -r: reset all learned cards for a set: cards.sh -r exampleset
-
 -d: delete a flashcard set: cards.sh -d exampleset
-
--s: List all available flashcard sets: cards.sh s
+-s: List all available flashcard sets: cards.sh -s
+```
