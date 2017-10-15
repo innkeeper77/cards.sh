@@ -1,5 +1,7 @@
 # cards.sh
-A bashscript based flashcard application inspired by [Joliv: fla.sh](https://github.com/joliv/fla.sh), but independently written and designed differently
+A bashscript based flashcard application that remembers which answers are known, and which still need review.
+
+Inspired by [Joliv: fla.sh](https://github.com/joliv/fla.sh), but not forked. Designed differently as an excersise, as well as personal preferences. 
 
 [![cardssh.gif](https://s26.postimg.org/3yd7sczfd/cardssh.gif)](https://postimg.org/image/km4puuu6t/)
 
