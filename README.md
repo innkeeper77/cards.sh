@@ -1,7 +1,7 @@
 # cards.sh
 A bashscript based flashcard application that remembers which answers are known, and which still need review.
 
-Inspired by [Joliv: fla.sh](https://github.com/joliv/fla.sh), but not forked. Designed differently as an excersise, as well as personal preferences. 
+Inspired by [Joliv: fla.sh](https://github.com/joliv/fla.sh) (not a fork)
 
 [![cardssh.gif](https://s26.postimg.org/3yd7sczfd/cardssh.gif)](https://postimg.org/image/km4puuu6t/)
 
@@ -26,9 +26,9 @@ cards.sh <options> <flashcard set>
 -s: List all available flashcard sets: cards.sh -s
 ```
 
-Flashcard files are text files, named <setname>.cards - Learned cards are saved in a seperate text file,  named <setname>.cards.learned
+Flashcard files are text files, named <setname>.cards - Learned cards are saved in a separate text file,  named <setname>.cards.learned
 
-These set files are savid within a subdirectory, sets/
+These set files are saved within a subdirectory, sets/
 
 Each line within each flashcard file is an entire flashcard in the format:
 
