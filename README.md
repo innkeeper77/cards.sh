@@ -3,8 +3,6 @@ A bashscript based flashcard application that remembers which answers are known,
 
 Inspired by [Joliv: fla.sh](https://github.com/joliv/fla.sh) (not a fork)
 
-[![cardssh.gif](https://s26.postimg.org/3yd7sczfd/cardssh.gif)](https://postimg.org/image/km4puuu6t/)
-
 ## Installation
 The script should be saved in a folder such as ~/ or ~/flashcards. It will create a sets folder in whatever directory it is ran from, where all flashcard sets are saved
 
