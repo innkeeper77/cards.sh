@@ -81,7 +81,7 @@ LEARNED () {
 			# Main flashcard playback loop
 			shuf -n 1 sets/${selectedset}.cards > .temp.cards # writes a random question to a temp file in the main directory
 			printf "\nQuestion: "
-			awk -F'======2======' '{print $1}' .temp.cards # Print question from temp file
+			awk -F'|' '{print $1}' .temp.cards # Print question from temp file
 			while true
 			do
 				echo # newline
@@ -89,14 +89,14 @@ LEARNED () {
 				case "$choice" in
 					h|H ) 
 						printf "Hint: "
-						awk -F'======2======' '{print $3}' .temp.cards
+						awk -F'|' '{print $3}' .temp.cards
 						;;
 					q|Q ) printf "quit\n"
 						exit 0
 						;;
 					a|A|* )
 						printf "\nAnswer: "
-						awk -F'======2======' '{print $2}' .temp.cards
+						awk -F'|' '{print $2}' .temp.cards
 						break
 						;;
 				esac
@@ -145,7 +145,7 @@ ALL () {
 				
 				shuf -n 1 sets/${selectedset}.cards > .temp.cards # writes a random question to a temp file in the main directory
 				printf "\nQuestion: "
-				awk -F'======2======' '{print $1}' .temp.cards # Print question from temp file
+				awk -F'|' '{print $1}' .temp.cards # Print question from temp file
 				while true
 				do
 					echo # newline
@@ -153,7 +153,7 @@ ALL () {
 					case "$choice" in
 						a|A )
 							printf "\nAnswer: "
-							awk -F'======2======' '{print $2}' .temp.cards
+							awk -F'|' '{print $2}' .temp.cards
 							break
 							;;
 						#* ) 
@@ -163,7 +163,7 @@ ALL () {
 						#	;;
 						h|H ) 
 							printf "\nHint: "
-							awk -F'======2======' '{print $3}' .temp.cards
+							awk -F'|' '{print $3}' .temp.cards
 							;;
 						q|Q ) printf "\nquit\n"
 							exit 0
@@ -195,7 +195,7 @@ ALL () {
 				
 				shuf -n 1 sets/${selectedset}.cards.learned > .temp.cards # writes a random question to a temp file in the main directory
 				printf "\nQuestion: "
-				awk -F'======2======' '{print $1}' .temp.cards # Print question from temp file
+				awk -F'|' '{print $1}' .temp.cards # Print question from temp file
 				while true
 				do
 					echo # newline
@@ -203,7 +203,7 @@ ALL () {
 					case "$choice" in
 						a|A )
 							printf "Answer: "
-							awk -F'======2======' '{print $2}' .temp.cards
+							awk -F'|' '{print $2}' .temp.cards
 							break
 							;;
 						#* ) 
@@ -213,7 +213,7 @@ ALL () {
 						#	;;
 						h|H ) 
 							printf "Hint: "
-							awk -F'======2======' '{print $3}' .temp.cards
+							awk -F'|' '{print $3}' .temp.cards
 							;;
 						q|Q ) printf "quit\n"
 							exit 0
@@ -289,7 +289,8 @@ WRITETO () {
 					read NWAN # new answer variable
 					echo -n "Hint (if any):"
 					read NHIN # new hint variable
-					echo "$NQES======2======$NWAN======2======$NHIN" >> sets/${selectedset}.cards #appends to bottom of unlearned list
+					#Sanitize inputs while writing to file
+					echo "${NQES//"|"}|${NWAN//"|"}|${NHIN//"|"}" >> sets/${selectedset}.cards #appends to bottom of unlearned list
 					;;	
 					
 					n|N  )
@@ -304,7 +305,8 @@ WRITETO () {
 					read NWAN # new answer variable
 					echo -n "Hint (if any):"
 					read NHIN # new hint variable
-					echo "$NQES======2======$NWAN======2======$NHIN" >> sets/${selectedset}.cards #appends to bottom of unlearned list
+					#Sanitize inputs while writing to file
+					echo "${NQES//"|"}|${NWAN//"|"}|${NHIN//"|"}" >> sets/${selectedset}.cards #appends to bottom of unlearned list
 					;;
 				esac
 		done
