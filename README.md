@@ -46,8 +46,8 @@ you may reset all questions to "unlearned" by calling the program with ```./card
 
 #### File Format
 Flashcard files are text files, named <setname>.cards - Learned cards are saved in a separate text file,  named <setname>.cards.learned
-As of Oct. 5 18, flashcard files will now be csv files instead of the "proprietary" format used before. Using : as delimiter- please do
-not include ":" in your set answers if you are creating it manually. The script will remove any ":" if you are creating a set using the script
+As of Oct. 5 18, flashcard files will now be csv files instead of the "proprietary" format used before. Using | as delimiter- please do
+not include "|" in your set answers if you are creating it manually. The script will remove any "|" if you are creating a set using the script
 
 These set files are saved within a subdirectory, sets/
 
