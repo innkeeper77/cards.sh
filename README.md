@@ -28,16 +28,17 @@ Ensure the script is executable- if it will not run, run "chmod +x cards.sh in t
 ### Usage
 
 ##### Create a flashcard set
-To use this program to create flashcard sets in the terminal, call the program with './cards.sh -n <setname>'
+To use this program to create flashcard sets in the terminal, call the program with ```./cards.sh -n <setname>```
 If desired you may create sets by using the specific file format below. It may be beneficial to create a sample set within the program to demonstrate the correct file format. 
 
 ##### Study off flashcards
 When studying, you can use two different modes. Learned, and all. Learned mode will only ask you questions you did not previously answer correctely, while all mode will ask you questions from anywhere in the set.
-'./cards.sh -l <setname>' for learned mode
-'./cards.sh -a <setname>' for all mode
+```./cards.sh -l <setname>``` for learned mode
+```./cards.sh -a <setname>``` for all mode
 
-When you are asked a question, think about or write down your answer. Use a hint if you need to by pressing 'h'. Once you are done, check your answer by pressing 'a'
-If you knew the answer, press 'y'. This will transfer this question into your 'learned' set, so it will not ask you again when in learned mode. If you wish to review, you may reset all questions to "unlearned" by calling the program with './cards.sh -r <setname>'
+When you are asked a question, think about or write down your answer. Use a hint if you need to by pressing 'h'. Once you are done, check your answer by pressing "a"
+If you knew the answer, press "y". This will transfer this question into your 'learned' set, so it will not ask you again when in learned mode. If you wish to review, 
+you may reset all questions to "unlearned" by calling the program with ```./cards.sh -r <setname>```
 
 #### File Format
 Flashcard files are text files, named <setname>.cards - Learned cards are saved in a separate text file,  named <setname>.cards.learned
@@ -46,7 +47,5 @@ not include ":" in your set answers if you are creating it manually. The script 
 
 These set files are saved within a subdirectory, sets/
 
-Each line within each flashcard file is an entire flashcard in the format:
-
-`<question>|<answer>|<hint>`
+Each line within each flashcard file is an entire flashcard in the format ```<question>|<answer>|<hint>```
 
